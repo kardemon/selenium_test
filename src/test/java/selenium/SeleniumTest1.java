@@ -9,13 +9,12 @@ public class SeleniumTest1 {
 
     public static void main(String[] args) {
 
-        System.out.println("Hello");
         System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\chromedriver_win32\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.rik.ee/et");
         WebElement element = driver.findElement(By.name("search_block_form"));
-        element.sendKeys("tööpakkumised\n"); // send also a "\n"
+        element.sendKeys("tööpakkumised\n");
         element.submit();
 
     }
