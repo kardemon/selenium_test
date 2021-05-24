@@ -14,11 +14,12 @@ public class SeleniumTest1 {
         System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\chromedriver_win32\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://www.rik.ee/et");
-        WebElement element = driver.findElement(By.name("search_block_form"));
-        element.sendKeys("tööpakkumised\n");
-        element.submit();
+        WebElement element = driver.findElement(By.id("edit-search-block-form--2"));
+        element.sendKeys("tööpakkumised");
+        WebElement element1 = driver.findElement(By.id("edit-submit"));
+        element1.click();
 
     }
 }
